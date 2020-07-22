@@ -19,9 +19,9 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-// require("./routes/api-routes")(app);
+require("./routes/api-routes")(app);
 
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App now listening on port:", PORT);
   });
