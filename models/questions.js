@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
         Correct: DataTypes.STRING,
         A2: DataTypes.STRING,
         A3: DataTypes.STRING,
-        A4: DataTypes.STRING,
+        A4: DataTypes.STRING
     });
     return Questions;
 };
