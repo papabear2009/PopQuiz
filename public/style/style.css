@@ -1,3 +1,6 @@
+.hide{
+    display:none;
+}
 body{
     background-color: 	#36182e;
 }
@@ -33,4 +36,21 @@ input{
 }
 .btnSignUp{
     background-color: 	#ca31b4 !important;
+}
+/*Font colors*/
+.yellowText{
+    color:#e7d47b;
+}
+/*homepage CSS*/
+.catagory{
+    color: #3ab5e6;
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+    margin-bottom: -80px;
+}
+.btnStart{
+    background-color: #3ab5e6 !important;
+}
+.btnScoreBoard{
+    background-color: #ca31b4 !important;
 }
