@@ -58,7 +58,7 @@ module.exports = function (sequelize, DataTypes) {
         TenCorrect: DataTypes.STRING,
         TenA2: DataTypes.STRING,
         TenA3: DataTypes.STRING,
-        TenA4: DataTypes.STRING,
+        TenA4: DataTypes.STRING
     });
     return Quizzes;
 };

@@ -4,6 +4,7 @@ var express = require("express");
 var db = require("./models");
 
 var app = express();
+var PORT = process.env.PORT || 3000;
 
 app.use(express.static("public"));
 
@@ -18,13 +19,9 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/quiz_controller.js");
+require("./routes/api-routes")(app);
 
-app.use(routes);
-
-
-var PORT = process.env.PORT || 3000;
-db.sequelize.sync().then(function() {
+db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App now listening on port:", PORT);
   });
