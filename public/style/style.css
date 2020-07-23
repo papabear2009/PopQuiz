@@ -54,3 +54,30 @@ input{
 .btnScoreBoard{
     background-color: #ca31b4 !important;
 }
+
+/*Questions Page*/
+.card-title{
+    color: #3ab5e6;
+    font-family: 'Pacifico', cursive;
+}
+.catagoryQuestion{
+    color: 	#ca31b4;
+    font-family: 'Pacifico', cursive;
+}
+.questionNumber{
+    color: 	#ca31b4;
+}
+.card{
+    background-color: 	#443c40 !important;
+}
+.cardQuestions{
+    color:#e7d47b;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+.buttonA1, .btn-large{
+    width: 100%;
+    background-color:	#3ab5e6 !important;
+    font-weight: bold;
+}
