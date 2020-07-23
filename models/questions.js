@@ -7,5 +7,10 @@ module.exports = function (sequelize, DataTypes) {
         A3: DataTypes.STRING,
         A4: DataTypes.STRING
     });
+    Questions.associate = function (models) {
+        Questions.belongsToMany(models.Quizzes, {
+            through: "quizQuestions"
+        });
+    }
     return Questions;
 };
