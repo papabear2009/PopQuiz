@@ -36,6 +36,7 @@ input{
 }
 .btnSignUp{
     background-color: 	#ca31b4 !important;
+    margin-bottom: 20px;
 }
 /*Font colors*/
 .yellowText{
@@ -80,4 +81,17 @@ input{
     width: 100%;
     background-color:	#3ab5e6 !important;
     font-weight: bold;
+}
+
+/*footer*/
+footer{
+    background-color:#443c40 !important;
+}
+.loginFooter{
+position: absolute;
+bottom: 0;
+width: 100%;
+}
+.homeRowFooter{
+    margin-bottom: 0px;
 }

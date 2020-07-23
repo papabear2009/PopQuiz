@@ -3,21 +3,25 @@
 //hides login page after they press login
 $(".btnLogin").click(function () {
   $("#loginPage").addClass("hide");
+  $(".loginFooter").addClass("hide");
 });
 $(".btnSignUp").click(function () {
   $("#loginPage").addClass("hide");
+  $(".loginFooter").addClass("hide");
 });
 //hides login page after they press SignUp    
 $(".btnLogin").click(function () {
   $("#logoHome").removeClass("hide");
   $(".carousel").removeClass("hide");
   $("#homePage").removeClass("hide");
+  $(".homeFooter").removeClass("hide");
   $('.carousel').carousel();              //needed for proper carousel function
 });
 $(".btnSignUp").click(function () {
   $("#logoHome").removeClass("hide");
   $(".carousel").removeClass("hide");
   $("#homePage").removeClass("hide");
+  $(".homeFooter").removeClass("hide");
   $('.carousel').carousel();              //needed for proper carousel function
 });
 
@@ -27,6 +31,9 @@ $(document).ready(function () {
   $('.carousel').carousel();
 });
 
+$(document).ready(function(){
+  $('.fixed-action-btn').floatingActionButton();
+});
 
 //Questions page//
 $(document).ready(function () {
