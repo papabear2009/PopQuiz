@@ -16,17 +16,44 @@ module.exports = function (app) {
 
     }).then(function (results) {
       let quizArr = [];
+      let counter = 2;
       // console.log(randomQuestions);
       for (let i = 0; i < 10; i++) {
         let randomQuestion = results[Math.floor(Math.random() * 50)];
         const foundQuestion = quizArr.find(question => question.id===randomQuestion.id)
         if(!foundQuestion){
+          randomQuestion.quizId = counter;
+          console.log(randomQuestion);
           quizArr.push(randomQuestion);
+        } else {
+          let randomQuestion = results[Math.floor(Math.random() * 50)];
+          const foundQuestion = quizArr.find(question => question.id===randomQuestion.id)
+          if(!foundQuestion){
+            randomQuestion.quizId = counter;
+            console.log(randomQuestion);
+            quizArr.push(randomQuestion);
+          }
         }
       };
-      // db.Quizzes.create({
 
-      // })
+
+    
+      const formatted = quizArr.map(function(object){
+        const newObj = {
+            quizId:object.quizId,
+            Q:object.Q,
+            Correct:object.correct,
+            A2: object.A2,
+            A3: object.A3,
+            A4: object.A4
+        }
+        return newObj
+    })
+    
+    db.Quizzes.bulkCreate(formatted).then(function(result){
+        console.log("Quiz Saved")
+    })
+
       res.json(quizArr);
     })
   });
