@@ -1,6 +1,5 @@
 var express = require("express");
 
-
 var db = require("./models");
 
 var app = express();
@@ -20,6 +19,7 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 require("./routes/api-routes")(app);
+require("./routes/html-routes")(app);
 
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
