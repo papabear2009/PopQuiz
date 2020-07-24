@@ -6,6 +6,9 @@ module.exports = function (sequelize, DataTypes) {
         Quizzes.belongsToMany(models.Questions, {
             through: "quizQuestions"
         })
+        Quizzes.belongsToMany(models.Score, {
+            through: "quizScore"
+        })
     }
     return Quizzes;
 };

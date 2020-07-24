@@ -8,7 +8,7 @@ module.exports = function (app) {
     });
   });
 
-  app.post("/api/questions/:category", function (req, res) {
+  app.get("/api/questions/:category", function (req, res) {
     db.Questions.findAll({
       where: {
         category: req.params.category
@@ -16,21 +16,15 @@ module.exports = function (app) {
 
     }).then(function (results) {
       let quizArr = [];
-      // let counter = 1;
-      // console.log(randomQuestions);
       for (let i = 0; i < 10; i++) {
         let randomQuestion = results[Math.floor(Math.random() * 50)];
         const foundQuestion = quizArr.find(question => question.id === randomQuestion.id)
         if (!foundQuestion) {
-          // randomQuestion.quizId = counter;
-          console.log(randomQuestion);
           quizArr.push(randomQuestion);
         } else {
           let randomQuestion = results[Math.floor(Math.random() * 50)];
           const foundQuestion = quizArr.find(question => question.id === randomQuestion.id)
           if (!foundQuestion) {
-            // randomQuestion.quizId = counter;
-            console.log(randomQuestion);
             quizArr.push(randomQuestion);
           }
         }
@@ -38,7 +32,7 @@ module.exports = function (app) {
 
       db.Quizzes.create({
         quizName: "test"
-      }).then(function(data){
+      }).then(function (data) {
         for (let i = 0; i < quizArr.length; i++) {
           data.addQuestions(quizArr[i].id)
         }
@@ -47,22 +41,33 @@ module.exports = function (app) {
     })
   });
 
-  app.get("/quiz/:id", function(req, res){
+  app.get("/quiz/:id", function (req, res) {
     db.Quizzes.findAll({
       where: {
         id: req.params.id
       },
-      include:[
+      include: [
         db.Questions
       ]
-    }).then(function(data){
+    }).then(function (data) {
       res.json(data);
     })
   });
 
-  // app.post("/api/authors", function(req, res) {
-  // });
-
+  app.get("/score/username", function (req, res) {
+    db.Score.create({
+      score: 5,
+      where: {
+        username: req.params.username,
+        // quizId: req.params.quizId
+      },
+        include:[
+          db.Quizzes, db.User
+        ]
+    }).then(function (data) {
+      res.json(data);
+    });
+  })
   // app.delete("/api/authors/:id", function(req, res) {
   // });
 
