@@ -47,8 +47,10 @@ $(document).ready(function () {
   })
 });
 
+function count(num){
+  num += 1;
+}
 $(document).ready(function(){
-  let counter = 1;
   const quizVal = $('#quizId').val();
   $.ajax({
     url: "/quiz/ajax/" + quizVal,
@@ -60,7 +62,26 @@ $(document).ready(function(){
     $("#A2").text(data.Questions[0].A2)
     $("#A3").text(data.Questions[0].A3)
     $("#A4").text(data.Questions[0].A4)
+    $('#counter').text("1");
+  })
+  $(".btnAnswer").click(function(event){
+    event.preventDefault();
+    let indexCounter = 0
+  let counter = indexCounter+1;
+  count(indexCounter);
+    $.ajax({
+      url: "/quiz/ajax/" + quizVal,
+    method: "GET"
+  }).then(function(data){
+    //console.log(data.Questions[1]);//
+    console.log(data);
+    $("#question").text(data.Questions[indexCounter].Q);
+    $("#correct").text(data.Questions[indexCounter].Correct)
+    $("#A2").text(data.Questions[indexCounter].A2)
+    $("#A3").text(data.Questions[indexCounter].A3)
+    $("#A4").text(data.Questions[indexCounter].A4)
     $('#counter').text(counter);
+  })
   })
 
 })
