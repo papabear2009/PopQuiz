@@ -47,9 +47,11 @@ $(document).ready(function () {
   })
 });
 
-function count(num){
-  num += 1;
-}
+// function count(num){
+//   let indexCounter = num + 1;
+//   console.log(indexCounter);
+// }
+
 $(document).ready(function(){
   const quizVal = $('#quizId').val();
   $.ajax({
@@ -64,27 +66,36 @@ $(document).ready(function(){
     $("#A4").text(data.Questions[0].A4)
     $('#counter').text("1");
   })
-  $(".btnAnswer").click(function(event){
-    event.preventDefault();
-    let indexCounter = 0
-  let counter = indexCounter+1;
-  count(indexCounter);
-    $.ajax({
-      url: "/quiz/ajax/" + quizVal,
-    method: "GET"
-  }).then(function(data){
-    //console.log(data.Questions[1]);//
-    console.log(data);
-    $("#question").text(data.Questions[indexCounter].Q);
-    $("#correct").text(data.Questions[indexCounter].Correct)
-    $("#A2").text(data.Questions[indexCounter].A2)
-    $("#A3").text(data.Questions[indexCounter].A3)
-    $("#A4").text(data.Questions[indexCounter].A4)
-    $('#counter').text(counter);
-  })
-  })
+}); 
 
-})
+
+let indexCounter = 0;
+
+  $(".btnAnswer").click(function(event){
+    const quizVal = $('#quizId').val();
+    event.preventDefault();
+    if(indexCounter === 9){
+      // take me to scores
+      console.log("Quiz is over")
+    } else {
+      indexCounter++;
+      let counter = indexCounter+1;
+      // count(indexCounter);
+      $.ajax({
+        url: "/quiz/ajax/" + quizVal,
+      method: "GET"
+    }).then(function(data){
+      //console.log(data.Questions[1]);//
+      console.log(data);
+      $("#question").text(data.Questions[indexCounter].Q);
+      $("#correct").text(data.Questions[indexCounter].Correct)
+      $("#A2").text(data.Questions[indexCounter].A2)
+      $("#A3").text(data.Questions[indexCounter].A3)
+      $("#A4").text(data.Questions[indexCounter].A4)
+      $('#counter').text(counter);
+    })
+    }
+  })
 
 //Questions page//
 $(document).ready(function () {
