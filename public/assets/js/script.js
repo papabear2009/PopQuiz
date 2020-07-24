@@ -34,15 +34,15 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $(".music").click(function () {
-      $(".catagoryInput").val("Music");
+      $(".categoryInput").val("Music");
       console.log("Music");
   })
   $(".sports").click(function () {
-      $(".catagoryInput").val("Sports");
+      $(".categoryInput").val("Sports");
       console.log("sports");
   })
   $(".movies").click(function () {
-      $(".catagoryInput").val("Movies");
+      $(".categoryInput").val("Movies");
       console.log("Movies");
   })
 });
@@ -52,13 +52,11 @@ $(document).ready(function () {
   var questionCount = 1;
   $("#startBtn").on("click", function () {
     console.log("start button");
-    $.get("/quiz/"+ id, function (data){
-      console.log(data);
-
-    }).then(function(data){
-      window.location.href = "/questions"
-    })
-
+    const categoryObj = {
+      sharelink: $(".categoryInput").val()
+    }
+    
+    console.log(categoryObj);
   })
 });
 
