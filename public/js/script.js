@@ -1,3 +1,4 @@
+
 //Login and Home Page
 
 //hides login page after they press login
@@ -94,5 +95,4 @@ $(document).ready(function () {
     $(`.questionNumber`).html(questionNum)
     }
   })
-  console.log(questionCount);
 })
