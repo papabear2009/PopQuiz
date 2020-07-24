@@ -1,5 +1,6 @@
 var express = require("express");
-
+const bcrypt = require("bcrypt");
+const session = require("express-session")
 var path = require("path");
 
 var db = require("./models");
@@ -12,6 +13,15 @@ app.use(express.static(path.join(__dirname, '/public/assets')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(session({
+  secret:"keyboard cat",
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+      maxAge: 7200000
+  }
+}))
+
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({
@@ -19,7 +29,13 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
+<<<<<<< HEAD
+const authRoutes = require('./controllers/authControllers');
+app.use("/auth", authRoutes);
+
+=======
 // app.use(require("./controllers/quizController"));
+>>>>>>> dev
 require("./routes/api-routes")(app);
 // require("./routes/html-routes")(app);
 
