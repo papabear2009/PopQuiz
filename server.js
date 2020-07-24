@@ -29,6 +29,9 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
+const authRoutes = require('./controllers/authControllers');
+app.use("/auth", authRoutes);
+
 require("./routes/api-routes")(app);
 // require("./routes/html-routes")(app);
 
