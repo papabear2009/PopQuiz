@@ -47,6 +47,24 @@ $(document).ready(function () {
   })
 });
 
+$(document).ready(function(){
+  let counter = 1;
+  const quizVal = $('#quizId').val();
+  $.ajax({
+    url: "/quiz/ajax/" + quizVal,
+    method: "GET"
+  }).then(function(data){
+    console.log(data);
+    $("#question").text(data.Questions[0].Q);
+    $("#correct").text(data.Questions[0].Correct)
+    $("#A2").text(data.Questions[0].A2)
+    $("#A3").text(data.Questions[0].A3)
+    $("#A4").text(data.Questions[0].A4)
+    $('#counter').text(counter);
+  })
+
+})
+
 //Questions page//
 $(document).ready(function () {
   var questionCount = 1;
