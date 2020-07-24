@@ -32,19 +32,35 @@ $(document).ready(function () {
   $('.carousel').carousel();
 });
 
-$(document).ready(function(){
-  $('.fixed-action-btn').floatingActionButton();
+$(document).ready(function () {
+  $(".music").click(function () {
+      $(".catagoryInput").val("Music");
+      console.log("Music");
+  })
+  $(".sports").click(function () {
+      $(".catagoryInput").val("Sports");
+      console.log("sports");
+  })
+  $(".movies").click(function () {
+      $(".catagoryInput").val("Movies");
+      console.log("Movies");
+  })
 });
 
 //Questions page//
-// $(document).ready(function () {
-//   var correctCount = 0;
-//   var questionCount = 1;
-//   var userGuess = "";
-//   $("#startBtn").on("click", function () {
-//     window.location.href = 'questions.html'
-//   })
+$(document).ready(function () {
+  var questionCount = 1;
+  $("#startBtn").on("click", function () {
+    console.log("start button");
+    $.get("/quiz/"+ id, function (data){
+      console.log(data);
 
+    }).then(function(data){
+      window.location.href = "/questions"
+    })
+
+  })
+});
 
 //   function displayQuestion() {
 //       var questionCard = `<div class="row">

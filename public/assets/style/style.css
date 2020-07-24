@@ -49,6 +49,11 @@ input{
     font-size: 20px;
     margin-bottom: -80px;
 }
+.btTxt{
+    display: block;
+    height: 200px;  
+    width: 200px;
+}
 .btnStart{
     background-color: #3ab5e6 !important;
 }
