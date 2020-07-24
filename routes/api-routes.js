@@ -1,5 +1,15 @@
 var db = require("../models");
 
+var express = require("express");
+
+// var path = require("path");
+
+// // var db = require("./models");
+
+// var app = express();
+// app.use(express.static(__dirname + '/public/assets'));
+
+
 
 module.exports = function (app) {
   app.get("/api/questions", function (req, res) {
@@ -41,6 +51,10 @@ module.exports = function (app) {
     })
   });
 
+  app.get("/", function(req, res){
+      res.render("index");
+  })
+
   app.get("/quiz/:id", function (req, res) {
     db.Quizzes.findAll({
       where: {
@@ -50,8 +64,16 @@ module.exports = function (app) {
         db.Questions
       ]
     }).then(function (data) {
-      res.json(data);
+      const dataObj = {
+        Q: data.Q,
+        Correct:data.Correct,
+        A2: data.A2,
+        A3: data.A3,
+        A4: data.A4
+      }
+      res.render("questions", dataObj);
     })
+      // res.json(data);
   });
 
   app.get("/score/username", function (req, res) {

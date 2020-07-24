@@ -1,13 +1,14 @@
 var express = require("express");
 
+var path = require("path");
+
 var db = require("./models");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-app.use(express.static("public"));
-
-
+// app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, '/public/assets')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -19,7 +20,7 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 require("./routes/api-routes")(app);
-require("./routes/html-routes")(app);
+// require("./routes/html-routes")(app);
 
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
