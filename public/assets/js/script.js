@@ -34,31 +34,68 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $(".music").click(function () {
-      $(".catagoryInput").val("Music");
+      $(".categoryInput").val("Music");
       console.log("Music");
   })
   $(".sports").click(function () {
-      $(".catagoryInput").val("Sports");
+      $(".categoryInput").val("Sports");
       console.log("sports");
   })
   $(".movies").click(function () {
-      $(".catagoryInput").val("Movies");
+      $(".categoryInput").val("Movies");
       console.log("Movies");
   })
 });
+
+function count(num){
+  num += 1;
+}
+$(document).ready(function(){
+  const quizVal = $('#quizId').val();
+  $.ajax({
+    url: "/quiz/ajax/" + quizVal,
+    method: "GET"
+  }).then(function(data){
+    console.log(data);
+    $("#question").text(data.Questions[0].Q);
+    $("#correct").text(data.Questions[0].Correct)
+    $("#A2").text(data.Questions[0].A2)
+    $("#A3").text(data.Questions[0].A3)
+    $("#A4").text(data.Questions[0].A4)
+    $('#counter').text("1");
+  })
+  $(".btnAnswer").click(function(event){
+    event.preventDefault();
+    let indexCounter = 0
+  let counter = indexCounter+1;
+  count(indexCounter);
+    $.ajax({
+      url: "/quiz/ajax/" + quizVal,
+    method: "GET"
+  }).then(function(data){
+    //console.log(data.Questions[1]);//
+    console.log(data);
+    $("#question").text(data.Questions[indexCounter].Q);
+    $("#correct").text(data.Questions[indexCounter].Correct)
+    $("#A2").text(data.Questions[indexCounter].A2)
+    $("#A3").text(data.Questions[indexCounter].A3)
+    $("#A4").text(data.Questions[indexCounter].A4)
+    $('#counter').text(counter);
+  })
+  })
+
+})
 
 //Questions page//
 $(document).ready(function () {
   var questionCount = 1;
   $("#startBtn").on("click", function () {
     console.log("start button");
-    $.get("/quiz/"+ id, function (data){
-      console.log(data);
-
-    }).then(function(data){
-      window.location.href = "/questions"
-    })
-
+    const categoryObj = {
+      sharelink: $(".categoryInput").val()
+    }
+    
+    console.log(categoryObj);
   })
 });
 

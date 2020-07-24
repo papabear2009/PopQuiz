@@ -71,22 +71,41 @@ module.exports = function (app) {
   })
 
   app.get("/quiz/:id", function (req, res) {
-    db.Quizzes.findAll({
+    db.Quizzes.findOne({
       where: {
         id: req.params.id
       },
-      include: [
-        db.Questions
-      ]
+      include:[db.Questions]
     }).then(function (data) {
-      const dataObj = {
-        Q: data.Q,
-        Correct:data.Correct,
-        A2: data.A2,
-        A3: data.A3,
-        A4: data.A4
-      }
-      res.render("questions", dataObj);
+      console.log("This is data " , data.toJSON());
+      // const dataObj = {
+      //   Q: data.Q,
+      //   Correct:data.Correct,
+      //   A2: data.A2,
+      //   A3: data.A3,
+      //   A4: data.A4
+      // }
+      res.render("questions", data.toJSON());
+    })
+      // res.json(data);
+  });
+
+  app.get("/quiz/ajax/:id", function (req, res) {
+    db.Quizzes.findOne({
+      where: {
+        id: req.params.id
+      },
+      include:[db.Questions]
+    }).then(function (data) {
+      console.log("This is data " , data.toJSON());
+      // const dataObj = {
+      //   Q: data.Q,
+      //   Correct:data.Correct,
+      //   A2: data.A2,
+      //   A3: data.A3,
+      //   A4: data.A4
+      // }
+      res.json(data.toJSON());
     })
       // res.json(data);
   });
