@@ -19,6 +19,7 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
+// app.use(require("./controllers/quizController"));
 require("./routes/api-routes")(app);
 // require("./routes/html-routes")(app);
 

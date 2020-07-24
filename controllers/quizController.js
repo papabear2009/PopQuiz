@@ -1,7 +1,9 @@
-//Handlebars//
-// var express = require("express");
+// Handlebars//
+var express = require("express");
 
-// var router = express.Router();
+var router = express.Router();
+
+var db = require("../models");
 
 // var db = require("../models/index.js")
 // router.get("/", function(req, res) {
@@ -13,14 +15,22 @@
 // });
 
 // router.get("/quiz/:id", function(req,res){
+//   console.log("HELLO WORLD")
 //     db.Quizzes.findAll({
 //         where: {
-//           id: req.params.id
+//           quizId: req.params.id
 //         },
-//         include: [
-//           db.Questions
-//         ]
+//         include: [db.Questions]
 //       }).then(function (data) {
-//         res.render("questions", data);
-//       })
+//         const quizJSON = data.map(function(quizObj){
+//             return quizObj.toJSON();
+//         })
+//         console.log(quizJSON);
+//         res.render("questions", {Quizzes:quizJSON});
+//       }).catch(err=>{
+//         console.log(err);
+//         res.status(500).end();
+//     })
 // })
+
+// module.exports = router;

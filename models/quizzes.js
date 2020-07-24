@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     var Quizzes = sequelize.define("Quizzes", {
-        quizName: DataTypes.STRING
+        // quizName: DataTypes.STRING
     });
     Quizzes.associate = function (models) {
         Quizzes.belongsToMany(models.Questions, {
