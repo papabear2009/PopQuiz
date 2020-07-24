@@ -11,3 +11,16 @@ router.get("/", function(req, res) {
     res.render("index", data);
   });
 });
+
+router.get("/quiz/:id", function(req,res){
+    db.Quizzes.findAll({
+        where: {
+          id: req.params.id
+        },
+        include: [
+          db.Questions
+        ]
+      }).then(function (data) {
+        res.render("questions", data);
+      })
+})
