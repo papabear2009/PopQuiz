@@ -91,12 +91,15 @@ input{
 /*footer*/
 footer{
     background-color:#443c40 !important;
+    position: fixed;
+    bottom: 0;
+    width: 100%;        
 }
-.loginFooter{
-position: absolute;
+/* .loginFooter{
+position: fixed;
 bottom: 0;
 width: 100%;
 }
 .homeRowFooter{
     margin-bottom: 0px;
-}
+} */
