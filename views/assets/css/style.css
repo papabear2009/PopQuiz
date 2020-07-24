@@ -1,0 +1,97 @@
+.hide{
+    display:none;
+}
+body{
+    background-color: 	#36182e;
+}
+.logo{
+    color: #3ab5e6;
+    border: 4px solid #e7d47b;
+    border-radius: 5px;
+    margin-bottom: 1px;
+    font-family: 'Pacifico', cursive;
+}
+.logoQuiz{
+    color: 	#ca31b4;
+    font-family: 'Pacifico', cursive;
+}
+input{
+    color:#e7d47b;
+}
+.input-field input:focus + label {
+    color: #3ab5e6 !important;
+  }
+  /* label underline focus color */
+  .row .input-field input:focus {
+    border-bottom: 1px solid #3ab5e6 !important;
+    box-shadow: 0 1px 0 0 #3ab5e6 !important
+  }
+  /*input highlight color*/
+.input-field .prefix{
+    color: #e7d47b !important;
+}
+/*button colors*/
+.btnLogin{
+    background-color: #3ab5e6 !important;
+}
+.btnSignUp{
+    background-color: 	#ca31b4 !important;
+    margin-bottom: 20px;
+}
+/*Font colors*/
+.yellowText{
+    color:#e7d47b;
+}
+/*homepage CSS*/
+.catagory{
+    color: #3ab5e6;
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+    margin-bottom: -80px;
+}
+.btnStart{
+    background-color: #3ab5e6 !important;
+}
+.btnScoreBoard{
+    background-color: #ca31b4 !important;
+}
+
+/*Questions Page*/
+.card-title{
+    color: #3ab5e6;
+    font-family: 'Pacifico', cursive;
+}
+.catagoryQuestion{
+    color: 	#ca31b4;
+    font-family: 'Pacifico', cursive;
+}
+.questionNumber{
+    color: 	#ca31b4;
+}
+.card{
+    background-color: 	#443c40 !important;
+}
+.cardQuestions{
+    color:#e7d47b;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+.buttonA1, .btn-large{
+    width: 100%;
+    background-color:	#3ab5e6 !important;
+    font-weight: bold;
+}
+
+/*footer*/
+footer{
+    background-color:#443c40 !important;
+}
+.loginFooter{
+position: absolute;
+bottom: 0;
+width: 100%;
+}
+.homeRowFooter{
+    margin-bottom: 0px;
+}
