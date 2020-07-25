@@ -17,7 +17,10 @@ module.exports = function (app) {
     db.Questions.findAll({
       where: {
         category: req.params.category
-      }
+      },
+      include: [
+        db.Quizzes
+      ]
 
     }).then(function (results) {
       let quizArr = [];

@@ -7,38 +7,88 @@ $(document).ready(function () {
 $(document).ready(function () {
   $(".music").click(function () {
       $(".categoryInput").val("Music");
+      // let queryObj = {
+      //   category: req.body.category
+      // }
       console.log("Music");
+      $.ajax({
+        url: "/api/questions/music",
+        method: "GET"
+      }).then(function(data){
+        let quizArr = data[0].Quizzes;
+        let newArr = [];
+        for(let i = 0;i<quizArr.length;i++){
+          newArr.push(quizArr[i].quizQuestions.QuizId);
+          console.log(newArr);
+        }
+        let quizId = newArr.pop();
+        $(".categoryInput").val("http://localhost:3000/quiz/" + quizId);
+      })
   })
   $(".sports").click(function () {
-      $(".categoryInput").val("Sports");
-      console.log("sports");
+    $(".categoryInput").val("Sports");
+    // let queryObj = {
+    //   category: req.body.category
+    // }
+    console.log("Sports");
+    $.ajax({
+      url: "/api/questions/sports",
+      method: "GET"
+    }).then(function(data){
+      console.log(data);
+      // console.log(data[4].Quizzes);
+      let quizArr = data[0].Quizzes;
+      let newArr = [];
+      for(let i = 0;i<quizArr.length;i++){
+        newArr.push(quizArr[i].quizQuestions.QuizId);
+        console.log(newArr);
+      }
+      let quizId = newArr.pop();
+      $(".categoryInput").val("http://localhost:3000/quiz/" + quizId);
+    })
   })
   $(".movies").click(function () {
-      $(".categoryInput").val("Movies");
-      console.log("Movies");
+    $(".categoryInput").val("Movies");
+    // let queryObj = {
+    //   category: req.body.category
+    // }
+    console.log("Movies");
+    $.ajax({
+      url: "/api/questions/film",
+      method: "GET"
+    }).then(function(data){
+      let quizArr = data[0].Quizzes;
+      let newArr = [];
+      for(let i = 0;i<quizArr.length;i++){
+        newArr.push(quizArr[i].quizQuestions.QuizId);
+        console.log(newArr);
+      }
+      let quizId = newArr.pop();
+      $(".categoryInput").val("http://localhost:3000/quiz/" + quizId);
+    })
   })
 });
 
-// function count(num){
-//   let indexCounter = num + 1;
-//   console.log(indexCounter);
-// }
+function count(num){
+  let indexCounter = num + 1;
+  console.log(indexCounter);
+}
 
-// $(document).ready(function(){
-//   const quizVal = $('#quizId').val();
-//   $.ajax({
-//     url: "/quiz/ajax/" + quizVal,
-//     method: "GET"
-//   }).then(function(data){
-//     console.log(data);
-//     $("#question").text(data.Questions[0].Q);
-//     $("#correct").text(data.Questions[0].Correct)
-//     $("#A2").text(data.Questions[0].A2)
-//     $("#A3").text(data.Questions[0].A3)
-//     $("#A4").text(data.Questions[0].A4)
-//     $('#counter').text("1");
-//   })
-// }); 
+$(document).ready(function(){
+  const quizVal = $('#quizId').val();
+  $.ajax({
+    url: "/quiz/ajax/" + quizVal,
+    method: "GET"
+  }).then(function(data){
+    console.log(data);
+    $("#question").text(data.Questions[0].Q);
+    $("#correct").text(data.Questions[0].Correct)
+    $("#A2").text(data.Questions[0].A2)
+    $("#A3").text(data.Questions[0].A3)
+    $("#A4").text(data.Questions[0].A4)
+    $('#counter').text("1");
+  })
+}); 
 
 
 let indexCounter = 0;
