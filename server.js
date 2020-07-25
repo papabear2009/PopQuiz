@@ -30,7 +30,7 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 const authRoutes = require('./controllers/authControllers');
-app.use("/auth", authRoutes);
+app.use("/", authRoutes);
 
 // app.use(require("./controllers/quizController"));
 require("./controllers/api-routes")(app);

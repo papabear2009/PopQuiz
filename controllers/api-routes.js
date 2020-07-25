@@ -47,27 +47,11 @@ module.exports = function (app) {
   });
 
   app.get("/", function(req, res){
-    db.User.findOne({
-      where: {
-          username: req.body.username
-      }
-  }).then(userData =>{
-      if(!userData){
-          return res.status(404).send("no such user")
-      } else{
-          if(bcrypt.compareSync(req.body.password, user.password)){
-              req.session.user = {
-                  id:user.id,
-                  username:user.username,
-              }
-              res.send("login successful!")
-          } else {
-              res.status(401).send("wrong password")
-          }
-      }
-      res.json(userData);
-  })
       res.render("index");
+  })
+
+  app.get("/home", (req, res)=>{
+    res.render("home");
   })
 
   app.get("/quiz/:id", function (req, res) {

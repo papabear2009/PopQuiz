@@ -1,39 +1,42 @@
 const bcrypt = require("bcrypt");
 const router = require('express').Router();
 const db = require('../models');
+const session = require("express-session");
 
 router.post('/signup',(req,res)=>{
     db.User.create({
         username:req.body.username,
         password:req.body.password
     }).then(userData=>{
+        console.log('userData', userData)
         res.json(userData.id)
     }).catch(err=>{
         res.status(500).end();
     })
 })
 
-router.post("/", function (req, res) {
+router.post("/login", function (req, res) {
     db.User.findOne({
         where: {
             username: req.body.username
         }
     }).then(userData => {
+        console.log(userData);
         if (!userData) {
             return res.status(404).send("no such user")
         } else {
-            if (bcrypt.compareSync(req.body.password, user.password)) {
+            if (bcrypt.compareSync(req.body.password, userData.password)) {
                 req.session.user = {
-                    id: user.id,
-                    username: user.username,
+                    id: userData.id,
+                    username: userData.username,
                 }
                 res.send("login successful!")
             } else {
                 res.status(401).send("wrong password")
             }
         }
-        res.json(userData);
     }).catch(err=>{
+        console.log(err)
         return res.status(500).end();
     })
 });
