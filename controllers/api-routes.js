@@ -97,11 +97,11 @@ module.exports = function (app) {
       // res.json(data);
   });
 
-  app.get("/score/username", function (req, res) {
+  app.post("/score", function (req, res) {
     db.Score.create({
-      score: 5,
+      // score: req.body.score,
       where: {
-        username: req.params.username,
+        id: req.session.user.id,
         // quizId: req.params.quizId
       },
         include:[
