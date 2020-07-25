@@ -1,31 +1,3 @@
-
-//Login and Home Page
-
-//hides login page after they press login
-$(".btnLogin").click(function () {
-  $("#loginPage").addClass("hide");
-  $(".loginFooter").addClass("hide");
-});
-$(".btnSignUp").click(function () {
-  $("#loginPage").addClass("hide");
-  $(".loginFooter").addClass("hide");
-});
-//hides login page after they press SignUp    
-$(".btnLogin").click(function () {
-  $("#logoHome").removeClass("hide");
-  $(".carousel").removeClass("hide");
-  $("#homePage").removeClass("hide");
-  $(".homeFooter").removeClass("hide");
-  $('.carousel').carousel();              //needed for proper carousel function
-});
-$(".btnSignUp").click(function () {
-  $("#logoHome").removeClass("hide");
-  $(".carousel").removeClass("hide");
-  $("#homePage").removeClass("hide");
-  $(".homeFooter").removeClass("hide");
-  $('.carousel').carousel();              //needed for proper carousel function
-});
-
 //Catagory carousel//
 
 $(document).ready(function () {
@@ -52,21 +24,21 @@ $(document).ready(function () {
 //   console.log(indexCounter);
 // }
 
-$(document).ready(function(){
-  const quizVal = $('#quizId').val();
-  $.ajax({
-    url: "/quiz/ajax/" + quizVal,
-    method: "GET"
-  }).then(function(data){
-    console.log(data);
-    $("#question").text(data.Questions[0].Q);
-    $("#correct").text(data.Questions[0].Correct)
-    $("#A2").text(data.Questions[0].A2)
-    $("#A3").text(data.Questions[0].A3)
-    $("#A4").text(data.Questions[0].A4)
-    $('#counter').text("1");
-  })
-}); 
+// $(document).ready(function(){
+//   const quizVal = $('#quizId').val();
+//   $.ajax({
+//     url: "/quiz/ajax/" + quizVal,
+//     method: "GET"
+//   }).then(function(data){
+//     console.log(data);
+//     $("#question").text(data.Questions[0].Q);
+//     $("#correct").text(data.Questions[0].Correct)
+//     $("#A2").text(data.Questions[0].A2)
+//     $("#A3").text(data.Questions[0].A3)
+//     $("#A4").text(data.Questions[0].A4)
+//     $('#counter').text("1");
+//   })
+// }); 
 
 
 let indexCounter = 0;
