@@ -33,7 +33,7 @@ const authRoutes = require('./controllers/authControllers');
 app.use("/auth", authRoutes);
 
 // app.use(require("./controllers/quizController"));
-require("./routes/api-routes")(app);
+require("./controllers/api-routes")(app);
 // require("./routes/html-routes")(app);
 
 db.sequelize.sync({ force: false }).then(function() {
