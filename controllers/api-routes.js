@@ -101,17 +101,20 @@ module.exports = function (app) {
   });
 
   app.post("/score", function (req, res) {
+    const user = req.session.user.id;
     db.Score.create({
-      // score: req.body.score,
+      score: req.body.score,
+      UserId: user,
+      QuizId: req.body.QuizId,
       where: {
-        id: req.session.user.id,
-        // quizId: req.params.quizId
+        id: 1
       },
         include:[
-          db.Quizzes, db.User
+        db.User, db.Quizzes
         ]
     }).then(function (data) {
       res.json(data);
+ 
     });
   })
   // app.delete("/api/authors/:id", function(req, res) {

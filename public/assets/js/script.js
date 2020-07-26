@@ -104,15 +104,13 @@ $(".btnAnswer").click(function (event) {
   const quizVal = $('#quizId').val();
   event.preventDefault();
   if (indexCounter === 9) {
-    // ajax call save score
-    // $.ajax({
-    //   url: "/score",
-    //   method: "PUT",
-    //   data: score
-    // }).then(function (data) {
-    //   console.log(data)
-    // })
-    // take me to scores
+    $.ajax({
+      url: "/score",
+      method: "PUT",
+      data: score
+    }).then(function (data) {
+      console.log(data)
+    })
     console.log("Quiz is over")
   } else {
     indexCounter++;
