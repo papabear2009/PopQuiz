@@ -67,7 +67,7 @@ module.exports = function (app) {
       },
       include:[db.Questions]
     }).then(function (data) {
-      console.log("This is data " , data.toJSON());
+      // console.log("This is data " , data.toJSON());
       // const dataObj = {
       //   Q: data.Q,
       //   Correct:data.Correct,

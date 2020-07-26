@@ -108,7 +108,7 @@ let indexCounter = 0;
       method: "GET"
     }).then(function(data){
       //console.log(data.Questions[1]);//
-      console.log(data);
+      // console.log(data);
       $("#question").text(data.Questions[indexCounter].Q);
       $("#correct").text(data.Questions[indexCounter].Correct)
       $("#A2").text(data.Questions[indexCounter].A2)
