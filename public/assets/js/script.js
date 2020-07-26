@@ -90,7 +90,7 @@ $(document).ready(function () {
   })
 });
 
-
+let scoreCounter = -1
 let indexCounter = 0;
 let score = 0;
 function correctAnswer() {
@@ -99,40 +99,45 @@ function correctAnswer() {
 }
 
 $(".btnAnswer").click(function (event) {
+  const questionAnswer = $("#correct").text();
+  console.log(questionAnswer)
   const quizVal = $('#quizId').val();
   event.preventDefault();
   if (indexCounter === 9) {
+    // ajax call save score
+    // $.ajax({
+    //   url: "/score",
+    //   method: "PUT",
+    //   data: score
+    // }).then(function (data) {
+    //   console.log(data)
+    // })
     // take me to scores
     console.log("Quiz is over")
   } else {
     indexCounter++;
+    scoreCounter++;
     let counter = indexCounter + 1;
-    /*if ($(".btnAnswer").val() === data.Questions[indexCounter].Correct) {
-      correctAnswer();
-      console.log(score)
-    } else {
-      console.log("somestring")
-    }*/
-    // count(indexCounter);
     $.ajax({
       url: "/quiz/ajax/" + quizVal,
       method: "GET"
     }).then(function (data) {
       //console.log(data.Questions[1]);//
-<<<<<<< HEAD
-      // console.log(data);
-=======
-      console.log(quizVal);
->>>>>>> dev
       $("#question").text(data.Questions[indexCounter].Q);
       $("#correct").text(data.Questions[indexCounter].Correct)
       $("#A2").text(data.Questions[indexCounter].A2)
       $("#A3").text(data.Questions[indexCounter].A3)
       $("#A4").text(data.Questions[indexCounter].A4)
       $('#counter').text(counter);
+      if (questionAnswer === data.Questions[scoreCounter].Correct) {
+        correctAnswer();
+        console.log(score)
+      } else {
+        console.log("somestring")
+      }
     })
   }
-  });
+});
 
 //Questions page//
 $(document).ready(function () {
