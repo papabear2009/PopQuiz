@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    $("#homeBtn").click(function () {
-        location.href="/home"
-    })
-})
+    function results () {
+        var results = 0;
+        
+    }
+})  
