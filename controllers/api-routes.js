@@ -56,6 +56,9 @@ module.exports = function (app) {
   app.get("/home", (req, res)=>{
     res.render("home");
   })
+  app.get("/score", (req, res)=>{
+    res.render("score");
+  })
 
   app.get("/quiz/:id", function (req, res) {
     db.Quizzes.findOne({
