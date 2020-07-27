@@ -99,22 +99,32 @@ function correctAnswer() {
 }
 
 $(".btnAnswer").click(function (event) {
-  const questionAnswer = $("#correct").text();
+  const questionAnswer = $(this).text();
   console.log(questionAnswer)
   const quizVal = $('#quizId').val();
   event.preventDefault();
   if (indexCounter === 9) {
+    const quizObj = {
+      score: score,
+      QuizId:quizVal
+  }
     $.ajax({
       url: "/score",
-      method: "PUT",
-      data: score
+      method: "POST",
+      data: quizObj
     }).then(function (data) {
       console.log(data)
+      $.ajax({
+        url: "/leaderboard/" + quizVal,
+        method:"GET",
+      }).then(function(leaders){
+        console.log('leaders', leaders)
+      })
     })
     console.log("Quiz is over")
   } else {
     indexCounter++;
-    scoreCounter++;
+    scoreCounter++
     let counter = indexCounter + 1;
     $.ajax({
       url: "/quiz/ajax/" + quizVal,
