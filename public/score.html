@@ -14,6 +14,7 @@
     <title>Pocket Pub Quiz</title>
 </head>
 <!--Top buttons Play again and Home-->
+<main>
 <div class="row scoreRow">
     <div class="col scoreCol s6">
         <button class="btn btn-large waves-effect waves-light btnScoreBoard" id="playAgainBtn" type="submit"
@@ -26,33 +27,28 @@
 </div>
 <!--Score Results and leaderboard-->
 <div class="row">
-        <div class="col s7 offset-s4">
-            <h2 class="blueText">Your <span class="pinkText">Score:</span></h2>
-        </div>
-        <div class="col s6 offset-s4">
-            <h3 class="yellowText"id="userScore">10 <span class="pinkText">/10</span></h3>
-        </div>
-</div>
-<div class="row">
-    <div class="col s6 offset-s2">
-        <h2 class="blueText">Scoreboard<span class="pinkText">:</span></h2>
-        <h3 class="yellowPrint">Placeholder</h3>
-        <h3 class="yellowPrint">Placeholder</h3>
-        <h3 class="yellowPrint">Placeholder</h3>
-        <h3 class="yellowPrint">Placeholder</h3>
-        <h3 class="yellowPrint">Placeholder</h3>
-        <h3 class="yellowPrint">Placeholder</h3>
-        <h3 class="yellowPrint">Placeholder</h3>
-        <h3 class="yellowPrint">Placeholder</h3>
-        <h3 class="yellowPrint">Placeholder</h3>
-        <h3 class="yellowPrint">Placeholder</h3>
+    <div class="col s7 offset-s4 push-m1">
+        <h2 class="blueText">Your <span class="pinkText">Score:</span></h2>
+    </div>
+    <div class="col s6 m6 offset-s4 push-m5">
+        <h3 class="blueText">You got a <span class="yellowText"id="userScore">10</span> <span class="pinkText">/10</span></h3>
     </div>
 </div>
+<div class="row">
+<div class="col s6 offset-s2 push-m3">
+    <h2 class="blueText">Scoreboard<span class="pinkText">:</span></h2>
+    <h3 class="yellowPrint">Placeholder</h3>
+    <h3 class="yellowPrint">Placeholder</h3>
+    <h3 class="yellowPrint">Placeholder</h3>
+    <h3 class="yellowPrint">Placeholder</h3>
+    <h3 class="yellowPrint">Placeholder</h3>
+</div>
+</div>
+</main>
 <footer class="page-footer homeFooter">
     <div class="container">
         <div class="row homeRowFooter">
             <div class="col s12">
-                <h5 class="white-text">Developers:</h5>
                 <div class="row homeRowFooter">
                     <div class="col s4">
                         <p>Brian Cox: Front End</p>
@@ -78,11 +74,11 @@
                             </li>
                         </ul>
                     </div>
-
+    
                 </div>
             </div>
         </div>
-</footer>
+    </footer>
 
 
     <!--JQuery CDN-->

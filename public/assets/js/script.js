@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $(".music").click(function () {
-    $(".categoryInput").val("Music");
+    $("#categoryText").text("Music");
     // let queryObj = {
     //   category: req.body.category
     // }
@@ -26,7 +26,7 @@ $(document).ready(function () {
     })
   })
   $(".sports").click(function () {
-    $(".categoryInput").val("Sports");
+    $("#categoryText").text("Sports");
     // let queryObj = {
     //   category: req.body.category
     // }
@@ -49,7 +49,7 @@ $(document).ready(function () {
     })
   })
   $(".movies").click(function () {
-    $(".categoryInput").val("Movies");
+    $("#categoryText").text("Film");
     // let queryObj = {
     //   category: req.body.category
     // }

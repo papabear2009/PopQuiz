@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Logo Font Quiz-->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/public/assets/style/style.css">
+    <title>Pocket Pub Quiz</title>
+</head>
+<body>
+    <div class="container" id="loginPage">
+        <div class="row">
+            <div class="col s7 offset-s3">
+                <h2 class="logo">Pocket Pub <span class="logoQuiz">Quiz</span></h2>
+            </div>
+            <!--Input fields for Username and Password-->
+            <div class="row">
+                <div class="input-field col s7 offset-s3">
+                    <i class="material-icons prefix icon-color">account_circle</i>
+                    <input id="username" type="text" class="validate username">
+                    <label for="icon_prefix">Username</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s7 offset-s3">
+                    <i class="material-icons prefix icon-color">enhanced_encryption</i>
+                    <input id="password" type="password" class="validate password">
+                    <label for="icon_prefix">Password</label>
+                </div>
+            </div>
+            <!--Button Login/SignUP-->
+            <div class="row">
+                <div class="col s7 m7 push-s4 push-m5">
+                    <button class="btn waves-effect waves-light btnLogin" type="submit" name="action" id = "loginBtn">Login &nbsp
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s7 m7 push-s4 push-m5">
+                    <button class="btn waves-effect waves-light btnSignUp" type="submit" name="action" id = "signupBtn">SignUp
+                        <i class="material-icons right">add_circle</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--JQuery CDN-->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Public JS file-->
+    <script src="./js/script.js"></script>
+</body>
