@@ -3,7 +3,14 @@
 }
 body{
     background-color: 	#36182e;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
+main {
+    flex: 1 0 auto;
+  }
+      
 .logo{
     color: #3ab5e6;
     border: 4px solid #e7d47b;
@@ -111,15 +118,16 @@ input{
 /*footer*/
 footer{
     background-color:#443c40 !important;
-    /*position: fixed;*/
-    bottom: 0;
-    width: 100%;        
+    width: 100%; 
 }
-/* .loginFooter{
+/*.loginFooter{
 position: fixed;
 bottom: 0;
 width: 100%;
 }
 .homeRowFooter{
     margin-bottom: 0px;
-} */
+}
+.homeFooter{
+    background-color:#443c40 !important;
+}*/
