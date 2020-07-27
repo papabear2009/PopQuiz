@@ -1,44 +1,45 @@
- <!--Questions-->
- <input id="quizId" type="hidden" value={{id}}>
-    <div class="container" id="questionContainer">
-        <div class="row">
-  <div class="col s12">
-      <h4 class="catagoryQuestion center" id="catagoryTrivia">Sports</h4>
-  </div>
-</div>
-<div class="row">
-  <div class="col s12 m6">
-      {{!-- {{#each Questions}} --}}
-      <div class="card">
-          <div class="card-content">
-              <span class="card-title">Question: <span
-              class="questionNumber"><span id="counter"></span>/10:</span>
-                  <p id="question" class="cardQuestions">{{Q}}</p>
-          </div>
-      </div>
-      <div class="row answerOne">
-          <div class="col s12">
-              <button class="waves-effect waves-light btnAnswer btn-large" id="correct">{{Correct}}</button>
-          </div>
-      </div>
-      <div class="row answerOne">
-          <div class="col s12">
-              <a id="A2" class="waves-effect waves-light btn-large btnAnswer">{{A2}}</a>
-          </div>
-      </div>
-      <div class="row answerOne">
-          <div class="col s12">
-              <a id="A3" class="waves-effect waves-light btn-large btnAnswer">{{A3}}</a>
-          </div>
-      </div>
-      <div class="row answerOne">
-          <div class="col s12">
-              <a id="A4" class="waves-effect waves-light btn-large btnAnswer">{{A4}}</a>
-          </div>
-      </div>
-      {{!-- {{/each}} --}}
-  </div>
-</div>
+<!--Questions-->
+<!--Questions-->
+<input id="quizId" type="hidden" value={{id}}>
+<div class="container" id="questionContainer">
+    <div class="row">
+        <div class="col s12">
+            <h4 class="catagoryQuestion center" id="catagoryTrivia">Sports</h4>
+        </div>
     </div>
+    <div class="row">
+        <div class="col s12 m12">
+            {{!-- {{#each Questions}} --}}
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title center">Question: <span class="questionNumber"><span
+                                id="counter"></span>/10:</span>
+                        <p id="question" class="cardQuestions">{{Q}}</p>
+                </div>
+            </div>
+            <div class="row answerOne">
+                <div class="col s12">
+                    <button class="waves-effect waves-light btnAnswer btn-large" id="correct">{{Correct}}</button>
+                </div>
+            </div>
+            <div class="row answerOne">
+                <div class="col s12">
+                    <a id="A2" class="waves-effect waves-light btn-large btnAnswer">{{A2}}</a>
+                </div>
+            </div>
+            <div class="row answerOne">
+                <div class="col s12">
+                    <a id="A3" class="waves-effect waves-light btn-large btnAnswer">{{A3}}</a>
+                </div>
+            </div>
+            <div class="row answerOne">
+                <div class="col s12">
+                    <a id="A4" class="waves-effect waves-light btn-large btnAnswer">{{A4}}</a>
+                </div>
+            </div>
+            {{!-- {{/each}} --}}
+        </div>
+    </div>
+</div>
 
 <script src="/js/quiz.js"></script>
