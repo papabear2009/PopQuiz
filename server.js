@@ -32,8 +32,11 @@ app.set("view engine", "handlebars");
 const authRoutes = require('./controllers/authControllers');
 app.use("/", authRoutes);
 
-// app.use(require("./controllers/quizController"));
-require("./controllers/api-routes")(app);
+const apiRoutes = require('./controllers/api-routes');
+app.use("/", apiRoutes);
+
+// app.use(require("./controllers/quizController"));//
+//require("./controllers/api-routes")(app);
 // require("./routes/html-routes")(app);
 
 db.sequelize.sync({ force: false }).then(function() {

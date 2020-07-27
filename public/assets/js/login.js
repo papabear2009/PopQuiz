@@ -13,11 +13,9 @@ $("#signupBtn").click(function(event){
         data: userObj
     }).done(function(data){
         console.log('data');
-        alert('sign up worked!')
         location.href = "/home"
     }).fail(function(err){
         console.log(err);
-        alert("something went wrong!")
         location.reload();
     })
 })
@@ -35,11 +33,9 @@ $("#loginBtn").click(function(event){
         data: userObj
     }).done(function(data){
         console.log(data);
-        alert('logged in!');
         location.href = "/home"
     }).fail(function(err){
         console.log(err);
-        alert("something went wrong!")
         location.reload();
     })
 })
