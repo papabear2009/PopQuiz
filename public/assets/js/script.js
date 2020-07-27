@@ -44,6 +44,7 @@ $(document).ready(function () {
         console.log(newArr);
       }
       let quizId = newArr.pop();
+      let siteURL = location.href;
       $(".categoryInput").val("http://localhost:3000/quiz/" + quizId);
     })
   })
@@ -136,6 +137,12 @@ $(".btnAnswer").click(function (event) {
     })
   }
 });
+
+//start button
+$('#startBtn').on("click", function(){
+ let quizLink = $('#quizLink').val();
+ window.location.href = quizLink;
+})
 
 //Questions page//
 $(document).ready(function () {
