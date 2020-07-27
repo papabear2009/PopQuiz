@@ -25,8 +25,13 @@ main {
 input{
     color:#e7d47b;
 }
+ .validate{
+    box-shadow: 0 1px 0 0 #3ab5e6 !important;
+    border-bottom: 1px solid #3ab5e6 !important;
+}
+
 .input-field input:focus + label {
-    color: #3ab5e6 !important;
+    color: #e7d47b !important;
   }
   /* label underline focus color */
   .row .input-field input:focus {
@@ -72,11 +77,35 @@ input{
     font-size: 20px;
     margin-bottom: -80px;
 }
+/*image buttons*/
+@media only screen and (max-width: 599px){
+.carousel{
+    height: 350px;
+    }
+    #categoryText{
+        margin-top: 0%;
+    }
+    .input-field .prefix ~ input {
+        width: 100%;
+    }
 .btTxt{
     display: block;
     height: 200px;  
     width: 200px;
 }
+}
+
+@media only screen and (min-width: 600px) {
+    .btTxt {
+        display: block;
+        height: 295px;  
+        width: 400px;
+        margin-left: -45%;
+    }
+    .input-field .prefix ~ input {
+        width: 58%;
+    }
+  }
 .btnStart{
     background-color: #3ab5e6 !important;
 }
