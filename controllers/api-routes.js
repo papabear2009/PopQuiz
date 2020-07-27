@@ -24,17 +24,11 @@ module.exports = function (app) {
 
     }).then(function (results) {
       let quizArr = [];
-      for (let i = 0; i < 10; i++) {
+      while(quizArr.length<11) {
         let randomQuestion = results[Math.floor(Math.random() * 50)];
         const foundQuestion = quizArr.find(question => question.id === randomQuestion.id)
         if (!foundQuestion) {
           quizArr.push(randomQuestion);
-        } else {
-          let randomQuestion = results[Math.floor(Math.random() * 50)];
-          const foundQuestion = quizArr.find(question => question.id === randomQuestion.id)
-          if (!foundQuestion) {
-            quizArr.push(randomQuestion);
-          }
         }
       };
 
@@ -61,22 +55,15 @@ module.exports = function (app) {
   })
 
   app.get("/quiz/:id", function (req, res) {
-    db.Quizzes.findOne({
+      db.Quizzes.findOne({
       where: {
         id: req.params.id
       },
       include:[db.Questions]
     }).then(function (data) {
-      // console.log("This is data " , data.toJSON());
-      // const dataObj = {
-      //   Q: data.Q,
-      //   Correct:data.Correct,
-      //   A2: data.A2,
-      //   A3: data.A3,
-      //   A4: data.A4
-      // }
       res.render("questions", data.toJSON());
     })
+    
       // res.json(data);
   });
 
@@ -101,21 +88,30 @@ module.exports = function (app) {
   });
 
   app.post("/score", function (req, res) {
-    const user = req.session.user.id;
-    db.Score.create({
-      score: req.body.score,
-      UserId: user,
-      QuizId: req.body.QuizId,
-      where: {
-        id: 1
+    if(!req.session.user){
+      res.status(401).end()
+    } else {
+      const user = req.session.user.id;
+      db.Score.create({
+        score: req.body.score,
+        UserId: user,
+        QuizId: req.body.QuizId
+      }).then(function (data) {
+        res.json(data);
+      });
+    }
+  })
+
+  app.get("/leaderboard/:id", (req, res) => {
+    db.Score.findAll({
+      where:{
+        QuizId: req.params.id,
       },
-        include:[
-        db.User, db.Quizzes
-        ]
-    }).then(function (data) {
-      res.json(data);
- 
-    });
+      order:[['score', 'DESC']],
+      include: [db.User]
+    }).then(function(result){
+      res.json(result)
+    })
   })
   // app.delete("/api/authors/:id", function(req, res) {
   // });
