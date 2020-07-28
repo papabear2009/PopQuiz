@@ -18,7 +18,7 @@ $(document).ready(function () {
                 newArr.push(quizArr[i].quizQuestions.QuizId);
             }
             let quizId = newArr.pop();
-            $(".categoryInput").val("http://localhost:3000/quiz/" + quizId);
+            $(".categoryInput").val("https://pocketpubquiz.herokuapp.com/quiz/" + quizId);
         })
     })
     $(".sports").click(function () {
@@ -33,7 +33,7 @@ $(document).ready(function () {
                 newArr.push(quizArr[i].quizQuestions.QuizId);
             }
             let quizId = newArr.pop();
-            $(".categoryInput").val("http://localhost:3000/quiz/" + quizId);
+            $(".categoryInput").val("https://pocketpubquiz.herokuapp.com/quiz/" + quizId);
         })
     })
     $(".movies").click(function () {
@@ -48,7 +48,7 @@ $(document).ready(function () {
                 newArr.push(quizArr[i].quizQuestions.QuizId);
             }
             let quizId = newArr.pop();
-            $(".categoryInput").val("http://localhost:3000/quiz/" + quizId);
+            $(".categoryInput").val("https://pocketpubquiz.herokuapp.com/quiz/" + quizId);
         })
     })
 
