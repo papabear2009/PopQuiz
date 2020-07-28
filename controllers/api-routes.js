@@ -105,12 +105,18 @@ router.get("/leaderboard/:id", (req, res) => {
     include: [db.User]
   }).then(function (result) {
     // console.log(result);
-    const scoreObj = {
-      res: result
+    // console.log(score)
+    const leaderArr = result.map(function(score, i){
+      const scoreObj = {
+        score: score.dataValues.score,
+        username: score.User.dataValues.username
+      }
+      return scoreObj
+    })
+    const leaderObj = {
+      "leaders" : leaderArr
     }
-    console.log(result.Score);
-    // res.json(result)
-   res.render("score", scoreObj)
+   res.render("score", leaderObj)
   })
 })
 module.exports = router;
