@@ -45,10 +45,12 @@ input{
 /*button colors*/
 .btnLogin{
     background-color: #3ab5e6 !important;
+    width: 32%;
 }
 .btnSignUp{
     background-color: 	#ca31b4 !important;
     margin-bottom: 20px;
+    width: 32%;
 }
 #homeBtn{
     background-color: 	#ca31b4 !important;
@@ -96,7 +98,16 @@ input{
 }
 .btnStart{
     background-color: #3ab5e6 !important;
-    width: 40%;
+    width: 75%;
+}
+.btnLogin{
+    background-color: #3ab5e6 !important;
+    width: 45%;
+}
+.btnSignUp{
+    background-color: 	#ca31b4 !important;
+    margin-bottom: 20px;
+    width: 45%;
 }
 }
 
@@ -115,7 +126,16 @@ input{
     }
     .btnStart{
         background-color: #3ab5e6 !important;
-        width: 15%;
+        width: 32%;
+    }
+    .btnLogin{
+        background-color: #3ab5e6 !important;
+        width: 32%;
+    }
+    .btnSignUp{
+        background-color: 	#ca31b4 !important;
+        margin-bottom: 20px;
+        width: 32%;
     }
   }
 
@@ -144,6 +164,9 @@ input{
 .buttonA1, .btn-large{
     background-color:	#3ab5e6 !important;
     font-weight: bold;
+}
+.btnQuiz{
+    width: 100%;
 }
 
 /*scoreboard css*/
