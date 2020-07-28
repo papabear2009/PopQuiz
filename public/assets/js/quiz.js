@@ -67,19 +67,19 @@ $(document).ready(function () {
     }).then(function (data) {
 
         const correctAnswer = `<div class="col s12">
-        <button class="waves-effect waves-light btnAnswer btn-large" id="correct">{{Correct}}</button>
+        <button class="waves-effect waves-light btnAnswer btnQuiz btn-large" id="correct">{{Correct}}</button>
     </div>`
 
         const answerTwo = `<div class="col s12">
-        <a id="A2" class="waves-effect waves-light btn-large btnAnswer">{{A2}}</a>
+        <a id="A2" class="waves-effect waves-light btn-large btnQuiz btnAnswer">{{A2}}</a>
     </div>`
 
         const answerThree = `<div class="col s12">
-        <a id="A3" class="waves-effect waves-light btn-large btnAnswer">{{A3}}</a>
+        <a id="A3" class="waves-effect waves-light btn-large btnQuiz btnAnswer">{{A3}}</a>
     </div>`
 
         const answerFour = `<div class="col s12">
-        <a id="A4" class="waves-effect waves-light btn-large btnAnswer">{{A4}}</a>
+        <a id="A4" class="waves-effect waves-light btn-large btnQuiz btnAnswer">{{A4}}</a>
     </div>`
 
         const answerArr = [correctAnswer, answerTwo, answerThree, answerFour]
@@ -164,19 +164,19 @@ $(document).ready(function () {
                 method: "GET"
             }).then(function (data) {
                 const correctAnswer = `<div class="col s12">
-        <button class="waves-effect waves-light btnAnswer btn-large" id="correct">{{Correct}}</button>
+        <button class="waves-effect waves-light btnAnswer btnQuiz btn-large" id="correct">{{Correct}}</button>
     </div>`
 
                 const answerTwo = `<div class="col s12">
-        <a id="A2" class="waves-effect waves-light btn-large btnAnswer">{{A2}}</a>
+        <a id="A2" class="waves-effect waves-light btn-large btnQuiz btnAnswer">{{A2}}</a>
     </div>`
 
                 const answerThree = `<div class="col s12">
-        <a id="A3" class="waves-effect waves-light btn-large btnAnswer">{{A3}}</a>
+        <a id="A3" class="waves-effect waves-light btn-large btnQuiz btnAnswer">{{A3}}</a>
     </div>`
 
                 const answerFour = `<div class="col s12">
-        <a id="A4" class="waves-effect waves-light btn-large btnAnswer">{{A4}}</a>
+        <a id="A4" class="waves-effect waves-light btn-large btnQuiz btnAnswer">{{A4}}</a>
     </div>`
 
                 const answerArr = [correctAnswer, answerTwo, answerThree, answerFour]
