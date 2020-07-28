@@ -12,9 +12,9 @@
                 <h2 class="blueText center">Score<span class="pinkText">board:</span></h2>
             </div>
         </div>
-        {{#each leaders}}
-        <div class="row">
-            <ol>
+        <ol>
+            {{#each leaders}}
+            <div class="row">
                 <div class="col s1 m3 push-m2">
                     <li class="pinkText userScore"><span class="blueText">{{username}}</span>
                 </div>
@@ -22,14 +22,14 @@
                     <span class="pinkText userScore"> {{score}}</span><span class="yellowText userScore">/10 </span>
                     </li>
                 </div>
-            </ol>
-        </div>
-        {{/each}}
+            </div>
+            {{/each}}
+        </ol>
     </div>
     <div class="wrapper">
-    <button class="btn btn-large waves-effect waves-light btnScoreBoard" id="homeBtn" type="submit"
-        name="action">Home</button>
-        </div>
+        <button class="btn btn-large waves-effect waves-light btnScoreBoard" id="homeBtn" type="submit"
+            name="action">Home</button>
+    </div>
 </main>
 <footer class="page-footer homeFooter">
     <div class="container">
