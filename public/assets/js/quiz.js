@@ -8,7 +8,6 @@ $(document).ready(function () {
 
     $(".music").click(function () {
         $("#categoryText").text("Music");
-        console.log("Music");
         $.ajax({
             url: "/api/questions/music",
             method: "GET"
@@ -17,7 +16,6 @@ $(document).ready(function () {
             let newArr = [];
             for (let i = 0; i < quizArr.length; i++) {
                 newArr.push(quizArr[i].quizQuestions.QuizId);
-                console.log(newArr);
             }
             let quizId = newArr.pop();
             $(".categoryInput").val("http://localhost:3000/quiz/" + quizId);
@@ -25,18 +23,14 @@ $(document).ready(function () {
     })
     $(".sports").click(function () {
         $("#categoryText").text("Sports");
-        console.log("Sports");
         $.ajax({
             url: "/api/questions/sports",
             method: "GET"
         }).then(function (data) {
-            console.log(data);
-            // console.log(data[4].Quizzes);
             let quizArr = data[0].Quizzes;
             let newArr = [];
             for (let i = 0; i < quizArr.length; i++) {
                 newArr.push(quizArr[i].quizQuestions.QuizId);
-                console.log(newArr);
             }
             let quizId = newArr.pop();
             $(".categoryInput").val("http://localhost:3000/quiz/" + quizId);
@@ -44,7 +38,6 @@ $(document).ready(function () {
     })
     $(".movies").click(function () {
         $("#categoryText").text("Film");
-        console.log("Movies");
         $.ajax({
             url: "/api/questions/film",
             method: "GET"
@@ -53,7 +46,6 @@ $(document).ready(function () {
             let newArr = [];
             for (let i = 0; i < quizArr.length; i++) {
                 newArr.push(quizArr[i].quizQuestions.QuizId);
-                console.log(newArr);
             }
             let quizId = newArr.pop();
             $(".categoryInput").val("http://localhost:3000/quiz/" + quizId);
@@ -84,7 +76,6 @@ $(document).ready(function () {
 
         const answerArr = [correctAnswer, answerTwo, answerThree, answerFour]
         shuffle(answerArr);
-        // console.log('answerArr', answerArr)
 
         function shuffle(array) {
             var m = answerArr.length, t, i;
@@ -100,7 +91,6 @@ $(document).ready(function () {
                 array[m] = array[i];
                 array[i] = t;
             }
-            console.log(array)
             return array;
         }
         $('#answerOne').append(answerArr[0]);
@@ -108,18 +98,14 @@ $(document).ready(function () {
         $('#answerThree').append(answerArr[2]);
         $('#answerFour').append(answerArr[3]);
 
-        console.log(data);
-
         $('#catagoryTrivia').text(data.Questions[0].category);
-        
+
         $("#question").text(data.Questions[0].Q);
         $("#correct").text(data.Questions[0].Correct)
         $("#A2").text(data.Questions[0].A2)
         $("#A3").text(data.Questions[0].A3)
         $("#A4").text(data.Questions[0].A4)
         $('#counter').text("1");
-
-
     })
 
     let scoreCounter = -1
@@ -130,14 +116,8 @@ $(document).ready(function () {
         return score
     }
 
-    // $("#playAgainBtn").on('click', function(){
-    //     let leaderboardId = $('#leaderboardId').val();
-    //     location.href = "http://localhost:3000/quiz/" + leaderboardId;
-    // })
-
     $(document).on("click", ".btnAnswer", function (event) {
         const questionAnswer = $(this).text();
-        console.log(questionAnswer)
 
         event.preventDefault();
         if (indexCounter === 9) {
@@ -150,11 +130,8 @@ $(document).ready(function () {
                 method: "POST",
                 data: quizObj
             }).then(function (data) {
-                console.log(data);
-                console.log(quizVal)
                 location.href = "/leaderboard/" + quizVal
             })
-            console.log("Quiz is over")
         } else {
             indexCounter++;
             scoreCounter++
@@ -181,7 +158,6 @@ $(document).ready(function () {
 
                 const answerArr = [correctAnswer, answerTwo, answerThree, answerFour]
                 shuffle(answerArr);
-                // console.log('answerArr', answerArr)
 
                 function shuffle(array) {
                     var m = answerArr.length, t, i;
@@ -197,7 +173,6 @@ $(document).ready(function () {
                         array[m] = array[i];
                         array[i] = t;
                     }
-                    console.log(array)
                     return array;
                 }
 
@@ -206,7 +181,6 @@ $(document).ready(function () {
                 $('#answerThree').html(answerArr[2]);
                 $('#answerFour').html(answerArr[3]);
 
-                //console.log(data.Questions[1]);//
                 $("#question").text(data.Questions[indexCounter].Q);
                 $("#correct").text(data.Questions[indexCounter].Correct)
                 $("#A2").text(data.Questions[indexCounter].A2)
@@ -215,9 +189,6 @@ $(document).ready(function () {
                 $('#counter').text(counter);
                 if (questionAnswer === data.Questions[scoreCounter].Correct) {
                     correctCheck();
-                    console.log(score)
-                } else {
-                    console.log("somestring")
                 }
             })
         }

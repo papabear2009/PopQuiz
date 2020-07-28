@@ -6,13 +6,8 @@ $(document).ready(function () {
     const url = window.location.href;
     let urlArr = url.split("/");
     let id = urlArr.pop();
-    console.log(urlArr);
     $.ajax({
         url: "/leaderboard/" + id,
         method: "GET"
     })
-    // }).then(function(data){
-    //     console.log("here");
-    // })
-
 })
