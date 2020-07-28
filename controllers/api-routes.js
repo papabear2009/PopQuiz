@@ -54,7 +54,7 @@ router.get("/score", (req, res) => {
   res.render("score");
 })
 
-router.get("/quiz/ajax/:id", function (req, res) {
+router.get("/ajax/:id", function (req, res) {
   db.Quizzes.findOne({
     where: {
       id: req.params.id
@@ -81,6 +81,7 @@ router.get("/quiz/:id", function (req, res) {
 });
 
 router.post("/score", function (req, res) {
+  // console.log(req.session);
   if (!req.session.user) {
     res.status(401).end()
   } else {
@@ -103,11 +104,13 @@ router.get("/leaderboard/:id", (req, res) => {
     order: [['score', 'DESC']],
     include: [db.User]
   }).then(function (result) {
+    // console.log(result);
     const scoreObj = {
-      result
+      res: result
     }
+    console.log(result.Score);
     // res.json(result)
-    return res.render("score", scoreObj)
+   res.render("score", scoreObj)
   })
 })
 module.exports = router;

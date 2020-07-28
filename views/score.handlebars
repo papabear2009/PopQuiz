@@ -1,4 +1,5 @@
 <main>
+    <input id="leaderboardID" type="hidden" value={{id}}>
     <div class="row scoreRow">
         <div class="col scoreCol s6">
             <button class="btn btn-large waves-effect waves-light btnScoreBoard" id="playAgainBtn" type="submit"
@@ -22,6 +23,9 @@
     <div class="row">
         <div class="col s6 offset-s2 push-m3">
             <h2 class="blueText">Scoreboard<span class="pinkText">:</span></h2>
+            {{#each Scores}}
+                <h3><span>{{UserId}}</span>{{score}}</h3>
+            {{/each}}
             <h3 class="yellowPrint">Placeholder</h3>
             <h3 class="yellowPrint">Placeholder</h3>
             <h3 class="yellowPrint">Placeholder</h3>
@@ -65,5 +69,5 @@
         </div>
 </footer>
 
-{{!-- <script src="/js/leaderboard.js"></script> --}}
-<script src="/js/quiz.js"></script>
+<script src="/js/leaderboard.js"></script>
+{{!-- <script src="/js/quiz.js"></script> --}}

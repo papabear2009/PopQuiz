@@ -4,19 +4,10 @@ $(document).ready(function () {
     $('#startBtn').on("click", function () {
         let quizLink = $('#quizLink').val();
         window.location.href = quizLink;
-        // console.log("start button");
-        // const categoryObj = {
-        //     sharelink: $(".categoryInput").val()
-        // }
-
-        // console.log(categoryObj);
     })
 
     $(".music").click(function () {
-        $(".categoryInput").val("Music");
-        // let queryObj = {
-        //   category: req.body.category
-        // }
+        $("#categoryText").text("Music");
         console.log("Music");
         $.ajax({
             url: "/api/questions/music",
@@ -33,10 +24,7 @@ $(document).ready(function () {
         })
     })
     $(".sports").click(function () {
-        $(".categoryInput").val("Sports");
-        // let queryObj = {
-        //   category: req.body.category
-        // }
+        $("#categoryText").text("Sports");
         console.log("Sports");
         $.ajax({
             url: "/api/questions/sports",
@@ -55,10 +43,7 @@ $(document).ready(function () {
         })
     })
     $(".movies").click(function () {
-        $(".categoryInput").val("Movies");
-        // let queryObj = {
-        //   category: req.body.category
-        // }
+        $("#categoryText").text("Movies");
         console.log("Movies");
         $.ajax({
             url: "/api/questions/film",
@@ -75,21 +60,19 @@ $(document).ready(function () {
         })
     })
 
-
-    const quizVal = $('#quizId').val();
-    $.ajax({
-        url: "/quiz/ajax/" + quizVal,
-        method: "GET"
-    }).then(function (data) {
-        console.log(data);
-        $("#question").text(data.Questions[0].Q);
-        $("#correct").text(data.Questions[0].Correct)
-        $("#A2").text(data.Questions[0].A2)
-        $("#A3").text(data.Questions[0].A3)
-        $("#A4").text(data.Questions[0].A4)
-        $('#counter').text("1");
-    })
-
+        const quizVal = $('#quizId').val();
+        $.ajax({
+            url: "/ajax/" + quizVal,
+            method: "GET"
+        }).then(function (data) {
+            console.log(data);
+            $("#question").text(data.Questions[0].Q);
+            $("#correct").text(data.Questions[0].Correct)
+            $("#A2").text(data.Questions[0].A2)
+            $("#A3").text(data.Questions[0].A3)
+            $("#A4").text(data.Questions[0].A4)
+            $('#counter').text("1");
+        })
 
     let scoreCounter = -1
     let indexCounter = 0;
@@ -99,10 +82,15 @@ $(document).ready(function () {
         return score
     }
 
+    // $("#playAgainBtn").on('click', function(){
+    //     let leaderboardId = $('#leaderboardId').val();
+    //     location.href = "http://localhost:3000/quiz/" + leaderboardId;
+    // })
+
     $(".btnAnswer").click(function (event) {
         const questionAnswer = $(this).text();
         console.log(questionAnswer)
-        const quizVal = $('#quizId').val();
+  
         event.preventDefault();
         if (indexCounter === 9) {
             const quizObj = {
@@ -114,17 +102,9 @@ $(document).ready(function () {
                 method: "POST",
                 data: quizObj
             }).then(function (data) {
-                // console.log(data)
+                console.log(data);
                 console.log(quizVal)
                 location.href = "/leaderboard/" + quizVal
-                // $.ajax({
-                //   url: "/leaderboard/" + quizVal,
-                //   method:"GET",
-                // }).then(function(leaders){
-                //   // $('#scores').text(leaders.User.username)
-                //   console.log(leaders)
-                // })
-
             })
             console.log("Quiz is over")
         } else {
@@ -132,7 +112,7 @@ $(document).ready(function () {
             scoreCounter++
             let counter = indexCounter + 1;
             $.ajax({
-                url: "/quiz/ajax/" + quizVal,
+                url: "/ajax/" + quizVal,
                 method: "GET"
             }).then(function (data) {
                 //console.log(data.Questions[1]);//
