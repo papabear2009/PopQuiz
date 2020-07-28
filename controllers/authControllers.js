@@ -9,6 +9,10 @@ router.post('/signup',(req,res)=>{
         password:req.body.password
     }).then(userData=>{
         console.log('userData', userData)
+        req.session.user = {
+            id: userData.id,
+            username: userData.username,
+        }
         res.json(userData.id)
     }).catch(err=>{
         res.status(500).end();
