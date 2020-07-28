@@ -43,7 +43,7 @@ $(document).ready(function () {
         })
     })
     $(".movies").click(function () {
-        $("#categoryText").text("Movies");
+        $("#categoryText").text("Film");
         console.log("Movies");
         $.ajax({
             url: "/api/questions/film",
@@ -110,6 +110,8 @@ $(document).ready(function () {
 
         console.log(data);
 
+        $('#catagoryTrivia').text(data.Questions[0].category);
+        
         $("#question").text(data.Questions[0].Q);
         $("#correct").text(data.Questions[0].Correct)
         $("#A2").text(data.Questions[0].A2)
