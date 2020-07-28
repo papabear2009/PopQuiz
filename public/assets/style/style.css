@@ -91,6 +91,13 @@ input{
     height: 200px;  
     width: 200px;
 }
+.btnScoreBoard{
+    width: 40%;
+}
+.btnStart{
+    background-color: #3ab5e6 !important;
+    width: 40%;
+}
 }
 
 @media only screen and (min-width: 600px) {
@@ -103,13 +110,15 @@ input{
     .input-field .prefix ~ input {
         width: 50%;
     }
+    .btnScoreBoard{
+        width: 15%;
+    }
+    .btnStart{
+        background-color: #3ab5e6 !important;
+        width: 15%;
+    }
   }
-.btnStart{
-    background-color: #3ab5e6 !important;
-}
-.btnScoreBoard{
-    background-color: #ca31b4 !important;
-}
+
 
 /*Questions Page*/
 .card-title{
@@ -133,7 +142,6 @@ input{
     font-family: sans-serif;
 }
 .buttonA1, .btn-large{
-    width: 100%;
     background-color:	#3ab5e6 !important;
     font-weight: bold;
 }
@@ -141,6 +149,15 @@ input{
 /*scoreboard css*/
 .scoreRow .scoreCol {
     padding: 0%;
+}
+.userScore{
+    font-size: 36px;
+}
+
+.wrapper{
+    display: flex;
+  align-items: center;
+  justify-content: center
 }
 /*footer*/
 footer{
