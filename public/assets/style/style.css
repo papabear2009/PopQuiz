@@ -1,6 +1,10 @@
 .hide{
     display:none;
 }
+#logoDiv{
+    display: flex;
+    align-items: center;
+}
 body{
     background-color: 	#36182e;
     display: flex;
@@ -17,6 +21,9 @@ main {
     border-radius: 5px;
     margin-bottom: 1px;
     font-family: 'Pacifico', cursive;
+    text-shadow:  2px 2px 50px #E646CE;
+   
+    
 }
 .logoQuiz{
     color: 	#ca31b4;
@@ -54,6 +61,7 @@ input{
 }
 #homeBtn{
     background-color: 	#ca31b4 !important;
+    margin-top: 50px;
 }
 /*Font colors*/
 .yellowPrint{
@@ -186,15 +194,23 @@ input{
 footer{
     background-color:#443c40 !important;
     width: 100%; 
+    padding-top: 0 !important;
 }
-/*.loginFooter{
-position: fixed;
-bottom: 0;
-width: 100%;
+.nameRow .linkRow{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
 }
+.devFooter{
+    color: whitesmoke;
+    font-size: 18px;
+}
+a{
+    text-decoration: none;
+    color: #3ab5e6;
+    
+}
+
 .homeRowFooter{
     margin-bottom: 0px;
 }
-.homeFooter{
-    background-color:#443c40 !important;
-}*/
