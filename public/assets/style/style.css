@@ -1,15 +1,29 @@
 .hide{
     display:none;
 }
+#logoDiv{
+    display: flex;
+    align-items: center;
+}
 body{
     background-color: 	#36182e;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
+main {
+    flex: 1 0 auto;
+  }
+      
 .logo{
     color: #3ab5e6;
     border: 4px solid #e7d47b;
     border-radius: 5px;
     margin-bottom: 1px;
     font-family: 'Pacifico', cursive;
+    text-shadow:  2px 2px 50px #E646CE;
+   
+    
 }
 .logoQuiz{
     color: 	#ca31b4;
@@ -18,8 +32,13 @@ body{
 input{
     color:#e7d47b;
 }
+ .validate{
+    box-shadow: 0 1px 0 0 #3ab5e6 !important;
+    border-bottom: 1px solid #3ab5e6 !important;
+}
+
 .input-field input:focus + label {
-    color: #3ab5e6 !important;
+    color: #e7d47b !important;
   }
   /* label underline focus color */
   .row .input-field input:focus {
@@ -33,13 +52,16 @@ input{
 /*button colors*/
 .btnLogin{
     background-color: #3ab5e6 !important;
+    width: 32%;
 }
 .btnSignUp{
     background-color: 	#ca31b4 !important;
     margin-bottom: 20px;
+    width: 32%;
 }
 #homeBtn{
     background-color: 	#ca31b4 !important;
+    margin-top: 50px;
 }
 /*Font colors*/
 .yellowPrint{
@@ -65,17 +87,66 @@ input{
     font-size: 20px;
     margin-bottom: -80px;
 }
+/*image buttons*/
+@media only screen and (max-width: 599px){
+.carousel{
+    height: 350px;
+    }
+    #categoryText{
+        margin-top: 0%;
+    }
+
 .btTxt{
     display: block;
     height: 200px;  
     width: 200px;
 }
+.btnScoreBoard{
+    width: 40%;
+}
 .btnStart{
     background-color: #3ab5e6 !important;
+    width: 75%;
 }
-.btnScoreBoard{
-    background-color: #ca31b4 !important;
+.btnLogin{
+    background-color: #3ab5e6 !important;
+    width: 45%;
 }
+.btnSignUp{
+    background-color: 	#ca31b4 !important;
+    margin-bottom: 20px;
+    width: 45%;
+}
+}
+
+@media only screen and (min-width: 600px) {
+    .btTxt {
+        display: block;
+        height: 295px;  
+        width: 400px;
+        margin-left: -45%;
+    }
+    .input-field .prefix ~ input {
+        width: 50%;
+    }
+    .btnScoreBoard{
+        width: 15%;
+    }
+    .btnStart{
+        background-color: #3ab5e6 !important;
+        width: 32%;
+    }
+    .btnLogin{
+        background-color: #3ab5e6 !important;
+        width: 32%;
+    }
+    .btnSignUp{
+        background-color: 	#ca31b4 !important;
+        margin-bottom: 20px;
+        width: 32%;
+    }
+  }
+
 
 /*Questions Page*/
 .card-title{
@@ -99,27 +170,47 @@ input{
     font-family: sans-serif;
 }
 .buttonA1, .btn-large{
-    width: 100%;
     background-color:	#3ab5e6 !important;
     font-weight: bold;
+}
+.btnQuiz{
+    width: 100%;
 }
 
 /*scoreboard css*/
 .scoreRow .scoreCol {
     padding: 0%;
 }
+.userScore{
+    font-size: 36px;
+}
+
+.wrapper{
+    display: flex;
+  align-items: center;
+  justify-content: center
+}
 /*footer*/
 footer{
     background-color:#443c40 !important;
-    /*position: fixed;*/
-    bottom: 0;
-    width: 100%;        
+    width: 100%; 
+    padding-top: 0 !important;
 }
-/* .loginFooter{
-position: fixed;
-bottom: 0;
-width: 100%;
+.nameRow .linkRow{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
 }
+.devFooter{
+    color: whitesmoke;
+    font-size: 18px;
+}
+a{
+    text-decoration: none;
+    color: #3ab5e6;
+    
+}
+
 .homeRowFooter{
     margin-bottom: 0px;
-} */
+}

@@ -8,7 +8,10 @@ router.post('/signup',(req,res)=>{
         username:req.body.username,
         password:req.body.password
     }).then(userData=>{
-        console.log('userData', userData)
+        req.session.user = {
+            id: userData.id,
+            username: userData.username,
+        }
         res.json(userData.id)
     }).catch(err=>{
         res.status(500).end();
@@ -21,7 +24,6 @@ router.post("/login", function (req, res) {
             username: req.body.username
         }
     }).then(userData => {
-        console.log(userData);
         if (!userData) {
             return res.status(404).send("no such user")
         } else {
@@ -36,7 +38,6 @@ router.post("/login", function (req, res) {
             }
         }
     }).catch(err=>{
-        console.log(err)
         return res.status(500).end();
     })
 });

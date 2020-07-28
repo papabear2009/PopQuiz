@@ -1,67 +1,65 @@
-<div class="row" id="logoHome">
-    <div class="col s7 offset-s2">
-        <h2 class="logo">Pocket Pub <span class="logoQuiz">Quiz</span></h2>
+<main>
+    <div class="row">
+        <div class="col s7 m2 offset-s2 offset-m5">
+            <h2 class="logo center">Pocket Pub <span class="logoQuiz">Quiz</span></h2>
+        </div>
     </div>
-    <div class="col s7 offset-s3">
-        <h2 class="catagory"><span class="logoQuiz">Select</span> and <span class="logoQuiz">Click</span> a <span
+    <div class="row">
+        <h2 class="catagory center"><span class="logoQuiz">Select</span> and <span class="logoQuiz">Click</span> a <br>
+        <span
                 class="yellowText">Category</span></h2>
-    </div>
-</div>
+                </div>
+
 <div class="carousel">
-    <a class="carousel-item" href="#one!"><input type="image" src="/img/sportsCatagory.jpg"
-            name="saveForm" class="btTxt submit sports" /></a>
-    <a class="carousel-item" href="#two!"><input type="image" src="/img/musicCatagory.jpg"
-            name="saveForm" class="btTxt submit music" /></a>
-    <a class="carousel-item" href="#three!"><input type="image" src="/img/moviesCatagory.jpg"
-            name="saveForm" class="btTxt submit movies" /></a>
+    <a class="carousel-item" href="#one!"><input type="image" src="/img/sportsCategory.jpg" name="saveForm"
+            class="btTxt submit sports" /></a>
+    <a class="carousel-item" href="#two!"><input type="image" src="/img/musicCategory.jpg" name="saveForm"
+            class="btTxt submit music" /></a>
+    <a class="carousel-item" href="#three!"><input type="image" src="/img/filmCategory.jpg" name="saveForm"
+            class="btTxt submit movies" /></a>
 </div>
 <div class="container" id="homePage">
     <div class="row">
-        <div class="input-field col s8 offset-s2">
+        <div class="col s12">
+            <h4 class="yellowText center" id="categoryText">Category</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s11 m7 offset-m4">
             <i class="material-icons prefix icon-color">share</i>
-            <input id="icon_prefix" type="text" class="validate categoryInput" value="SomeText">
-            <label for="icon_prefix">share link</label>
+            <input id="quizLink" type="text" class="validate categoryInput" value="" placeholder="Quiz Link">
         </div>
     </div>
-    <div class="row">
-        <div class="col offset-s3">
+    <div class="row wrapper">
             <button class="btn btn-large waves-effect waves-light btnStart" id="startBtn" type="submit"
-                name="action">&nbsp &nbsp &nbsp Start &nbsp &nbsp &nbsp</button>
+                name="action">Start
+                <i class="material-icons right">local_play</i>
+            </button>
         </div>
-    </div>
-    <div class="row">
-        <div class="col offset-s3">
-            <button class="btn btn-large waves-effect waves-light btnScoreBoard" type="submit"
-                name="action">Scoreboard</button>
-        </div>
-    </div>
-</div>
-<!--Footers-->
-<!--Footer for login page-->
-<footer class="page-footer loginFooter">
+        </main>
+<footer class="page-footer homeFooter">
     <div class="container">
         <div class="row homeRowFooter">
-            <div class="col s12 ">
-                <h5 class="white-text">Developers:</h5>
+            <div class="col s12">
                 <div class="row homeRowFooter">
-                    <div class="col s4">
-                        <p>Brian Cox: Front End</p>
+                    <div class="col s4 m3 offset-m2">
+                        <p class="devFooter">Brian Cox: Front End</p>
                         <ul>
                             <li><a href="https://github.com/papabear2009" target="_blank">GitHub |</a><a
                                     href="https://www.linkedin.com/in/brian-cox-18695392/" target="_blank">
                                     Linkedin</a></li>
                         </ul>
                     </div>
-                    <div class="col s4">
-                        <p>Bryce Pinguel: Back End</p>
+                    <div class="col s4 m3 ">
+                        <p class="devFooter">Bryce Pingul: Back End</p>
                         <ul>
                             <li><a href="https://github.com/Brycetp11" target="_blank">GitHub |</a><a
                                     href="https://www.linkedin.com/in/bryce-pingul/" target="_blank"> Linkedin</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="col s4">
-                        <p>Nick Mardon: Back End</p>
+                    <div class="col s4 m3">
+                        <p class="devFooter">Nick Mardon: Back End</p>
                         <ul>
                             <li><a href="https://github.com/NickMardon" target="_blank">GitHub |</a><a
                                     href="https://www.linkedin.com/in/nickmardon/" target="_blank"> Linkedin</a>
@@ -73,4 +71,4 @@
             </div>
         </div>
 </footer>
-<script src="/js/script.js"></script>
+<script src="/js/quiz.js"></script>

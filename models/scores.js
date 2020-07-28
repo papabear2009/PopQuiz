@@ -6,7 +6,7 @@ module.exports = function (sequelize, DataTypes) {
     Score.belongsTo(models.User, {
       through: "userScores"
     })
-    Score.belongsToMany(models.Quizzes, {
+    Score.belongsTo(models.Quizzes, {
       through: "quizScore"
     })
   }
