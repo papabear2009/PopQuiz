@@ -4,9 +4,6 @@ var router = require("express").Router();
 const bcrypt = require("bcrypt");
 const session = require("express-session")
 
-
-
-
 router.get("/api/questions", function (req, res) {
   db.Questions.findAll({}).then(function (results) {
     res.json(results);
@@ -61,7 +58,6 @@ router.get("/ajax/:id", function (req, res) {
     },
     include: [db.Questions]
   }).then(function (data) {
-    console.log("This is data ", data.toJSON());
     res.json(data.toJSON());
   })
 });
@@ -73,16 +69,11 @@ router.get("/quiz/:id", function (req, res) {
     },
     include: [db.Questions]
   }).then(function (data) {
-    // console.log(data.toJSON());
-    
     res.render("questions", data.toJSON());
   })
-
-  // res.json(data);
 });
 
 router.post("/score", function (req, res) {
-  // console.log(req.session);
   if (!req.session.user) {
     res.status(401).end()
   } else {
@@ -105,8 +96,6 @@ router.get("/leaderboard/:id", (req, res) => {
     order: [['score', 'DESC']],
     include: [db.User]
   }).then(function (result) {
-    // console.log(result);
-    // console.log(score)
     const leaderArr = result.map(function(score, i){
       const scoreObj = {
         score: score.dataValues.score,

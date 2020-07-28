@@ -8,7 +8,6 @@ var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-// app.use(express.static("public"));
 app.use(express.static(path.join(__dirname, '/public/assets')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -34,10 +33,6 @@ app.use("/", authRoutes);
 
 const apiRoutes = require('./controllers/api-routes');
 app.use("/", apiRoutes);
-
-// app.use(require("./controllers/quizController"));//
-//require("./controllers/api-routes")(app);
-// require("./routes/html-routes")(app);
 
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
