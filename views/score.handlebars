@@ -23,14 +23,9 @@
     <div class="row">
         <div class="col s6 offset-s2 push-m3">
             <h2 class="blueText">Scoreboard<span class="pinkText">:</span></h2>
-            {{#each Scores}}
-                <h3><span>{{UserId}}</span>{{score}}</h3>
+            {{#each leaders}}
+                <h3 class="yellowPrint"><span>{{username}}</span> {{score}}</h3>
             {{/each}}
-            <h3 class="yellowPrint">Placeholder</h3>
-            <h3 class="yellowPrint">Placeholder</h3>
-            <h3 class="yellowPrint">Placeholder</h3>
-            <h3 class="yellowPrint">Placeholder</h3>
-            <h3 class="yellowPrint">Placeholder</h3>
         </div>
     </div>
 </main>
