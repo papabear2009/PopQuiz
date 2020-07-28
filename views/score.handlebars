@@ -1,35 +1,35 @@
 <main>
     <input id="leaderboardID" type="hidden" value={{id}}>
-    <div class="row scoreRow">
-        <div class="col scoreCol s6">
-            <button class="btn btn-large waves-effect waves-light btnScoreBoard" id="playAgainBtn" type="submit"
-                name="action">Play Again</button>
+    <div class="container" id="loginPage">
+        <div class="row">
+            <div class="col s7 m4 offset-s3 offset-m4">
+                <h2 class="logo">Pocket Pub <span class="logoQuiz">Quiz</span></h2>
+            </div>
         </div>
-        <div class="col scoreCol s6">
-            <button class="btn btn-large waves-effect waves-light btnScoreBoard" id="homeBtn" type="submit"
-                name="action">Home</button>
+        <!--Score Results and leaderboard-->
+        <div class="row">
+            <div class="col s3 offset-s1 push-m3">
+                <h2 class="blueText">Score<span class="pinkText">board:</span></h2>
+            </div>
         </div>
-    </div>
-    <!--Score Results and leaderboard-->
-    <div class="row">
-        <div class="col s7 offset-s4 push-m1">
-            <h2 class="blueText">Your <span class="pinkText">Score:</span></h2>
-        </div>
-        <div class="col s12">
-            <h3 class="yellowText center" id="userScore">10 <span
-                    class="pinkText">/10</span></h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s6 offset-s2 push-m3">
-            <h2 class="blueText">Scoreboard<span class="pinkText">:</span></h2>
+        {{#each leaders}}
+        <div class="row">
             <ol>
-            {{#each leaders}}
-                <li class="yellowPrint"><span>{{username}}</span> {{score}}</li>
-            {{/each}}
+                <div class="col s1 m3 push-m2">
+                    <li class="pinkText userScore"><span class="blueText">{{username}}</span>
+                </div>
+                <div class="col s1 m3 push-s7 push-m6">
+                    <span class="pinkText userScore"> {{score}}</span><span class="yellowText userScore">/10 </span>
+                    </li>
+                </div>
             </ol>
         </div>
+        {{/each}}
     </div>
+    <div class="wrapper">
+    <button class="btn btn-large waves-effect waves-light btnScoreBoard" id="homeBtn" type="submit"
+        name="action">Home</button>
+        </div>
 </main>
 <footer class="page-footer homeFooter">
     <div class="container">
