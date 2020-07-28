@@ -85,9 +85,7 @@ input{
     #categoryText{
         margin-top: 0%;
     }
-    .input-field .prefix ~ input {
-        width: 100%;
-    }
+
 .btTxt{
     display: block;
     height: 200px;  
@@ -103,7 +101,7 @@ input{
         margin-left: -45%;
     }
     .input-field .prefix ~ input {
-        width: 58%;
+        width: 50%;
     }
   }
 .btnStart{
