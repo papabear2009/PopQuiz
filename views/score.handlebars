@@ -23,9 +23,11 @@
     <div class="row">
         <div class="col s6 offset-s2 push-m3">
             <h2 class="blueText">Scoreboard<span class="pinkText">:</span></h2>
+            <ol>
             {{#each leaders}}
-                <h3 class="yellowPrint"><span>{{username}}</span> {{score}}</h3>
+                <li class="yellowPrint"><span>{{username}}</span> {{score}}</li>
             {{/each}}
+            </ol>
         </div>
     </div>
 </main>
