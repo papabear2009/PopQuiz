@@ -73,7 +73,8 @@ router.get("/quiz/:id", function (req, res) {
     },
     include: [db.Questions]
   }).then(function (data) {
-
+    // console.log(data.toJSON());
+    
     res.render("questions", data.toJSON());
   })
 
